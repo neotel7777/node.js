@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title>Chat App</title>
+</head>
+
+<body>
+<header>
+    <h1><%=title%></h1>
+</header>
+
+<section>
+
+    <div action="/login" method="post">
+        <div>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username" required />
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+        </div>
+        <div>
+            <button id="register" type="submit">Sign up</button>
+
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="chat.js"></script>
+
+</body>
+</html>
