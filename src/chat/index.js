@@ -4,8 +4,6 @@ const app = express();
 const { v4: uuid } = require('uuid');
 const DB = require('./database/connect');
 const fs = require("fs");
-var cookieParser = require('cookie-parser');
-var Cookies = require('cookies');
 var sessionId = '';
 app.set('view engine', 'ejs');
 app.set('views', 'src/chat/views');
@@ -14,21 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.use(cookieParser('khlkhhjlkh'));
-app.use(function(req, res, next){
-    if (req.cookies.userSid === undefined) {
 
-        app.use(function (req, res) {
-
-            sid = uuid();
-            res.cookie("userSid", sid );
-            console.log('cookie have created successfully '+ sid);
-            console.log(req.cookies);
-        });
-    }
-    next();
-
-});
 const options = {
     key: fs.readFileSync("server.key"),
     cert: fs.readFileSync("server.cert"),
