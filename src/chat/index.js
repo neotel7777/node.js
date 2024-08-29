@@ -23,7 +23,7 @@ app.use(express.static("src/chat/public"));
 app.get('/', (req, res) => {
     sessionId = req.sessionID;
     let data = {
-            title: "chat nodejs",
+            title: "chat nodejs test",
             user: "None"
         }
         res.render('index', {data: data});
